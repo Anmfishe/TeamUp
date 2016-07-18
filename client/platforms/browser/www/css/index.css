@@ -31,7 +31,6 @@ body {
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 }
 
@@ -108,21 +107,7 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
-.horizontalStyle {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    height: 50px;
-    overflow: hidden;
-    background-color: #5f5f5f;
-}
-.elementStyle {
-    display: block;
-    text-align: center;
-    text-decoration: none;
 
-}
 .icon {
-    width: 50px;
-    height:  50px;
+    color: #ea8a2f;
 }

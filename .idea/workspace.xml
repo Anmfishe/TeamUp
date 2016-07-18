@@ -118,9 +118,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/models/user.js" />
-        <option value="$PROJECT_DIR$/client/www/css/index.css" />
         <option value="$PROJECT_DIR$/client/config.xml" />
         <option value="$PROJECT_DIR$/lib/jquery.mobile-1.4.5.js" />
+        <option value="$PROJECT_DIR$/client/www/css/index.css" />
+        <option value="$PROJECT_DIR$/client/www/index.html" />
         <option value="$PROJECT_DIR$/client/www/main.html" />
         <option value="$PROJECT_DIR$/client/www/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
