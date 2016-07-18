@@ -1,0 +1,5 @@
+{
+  "user" : {
+    "dispatcher" : "user/Dispatcher.js"
+  }
+}
