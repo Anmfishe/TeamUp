@@ -1,10 +1,10 @@
 import {Dispatcher} from "./Dispatcher";
 import {RequestMethod} from "./RequestMethod";
 
-export class ExampleDispatcher extends Dispatcher
+export class ExampleDispatcher implements Dispatcher
 {
     dispatch(requestMethod : RequestMethod) : Object
     {
-        return { info : "example" };
+        return { hello : "world" };
     }
 }
