@@ -12,34 +12,43 @@
         * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
         * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
             * Enable inline JS: add 'unsafe-inline' to default-src
-            * Enable eval(): add 'unsafe-eval' to default-src
+            * Enable eval(): add 'unsafe-eval' to default-src.
         * Create your own at http://cspisawesome.com
         -->
         <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />-->
 
+        <!--<script src="../../lib/jquery-1.8.2.min.js"></script>
+        <script src="../../lib/jquery.mobile-1.3.0.min.js"></script>-->
+        <script src="../../models/user.js"></script>
+        <script src="../../models/team.js"></script>
 
-        <!--<script type="text/javascript" src="../../lib/jquery-1.9.1.js"></script>
-        <script type="text/javascript" src="../../models/user.js"></script>
-        <script type="text/javascript" src="../../lib/jquery.mobile-1.4.5.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <link rel="stylesheet"  href="./css/jquery.mobile.theme-1.4.5.css"/>
-        <link rel="stylesheet"  href="./css/jquery.mobile-1.4.5.css" media="all, handheld"/>
-        <link rel="stylesheet"  href="./css/jquery.mobile.icons-1.4.5.css"/>-->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
-        <link rel="stylesheet" type="text/css" href="./css/index.css" />
-        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <!--<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />-->
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/main.css"/>
 
-        <title>Hello World</title>
     </head>
 
     <body>
-    <div data-role="header" data-theme="a" >
-        <a class="icon" data-icon="bars" >Teams</a>
-        <!-- 10 mught be a good char limit -->
-        <h2 id="teamTitle">Dargon Tarps</h2>
-        <a class="icon" data-icon="gear" >Options</a>
+    <div id="teamsPanel" data-role="panel" data-display="overlay" id="mypanel">
+        <ul data-role="listview" data-theme="b">
+            <li>Test 1</li>
+            <li>Test 2</li>
+        </ul>
     </div>
+    <div data-role="header" data-theme="b" >
+        <a style="color:#ea8a2f;" data-icon="bars" href="#teamsPanel">Teams</a>
+        <h1 id="teamTitle"></h1>
+        <a style="color: #ea8a2f;" data-icon="gear" >Options</a>
+    </div>
+    <script type="text/javascript">
+        var team1 = new team("Dargon Tarps", 1, "League of Legends");
+        var user1 = new user("My Boy", "Password1234");
+        user1.teams.push(team1);
+        $("#teamTitle").text(user1.teams[0].name);
+    </script>
+
 
 
 

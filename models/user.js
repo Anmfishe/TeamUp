@@ -1,7 +1,12 @@
+/**
+ * @param user
+ * @param user.teams
+ */
+
 var user;
-user = function (name, password, teams, friends) {
+user = function (name, password) {
     this.name = name;
     this.password = password;
-    this.teams = teams;
-    this.friends = friends;
+    this.teams = [];
+    this.friends = [];
 };
