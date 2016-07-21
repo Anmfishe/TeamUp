@@ -17,27 +17,28 @@
         -->
         <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" />-->
 
+        <!--<script src="../../lib/jquery-1.8.2.min.js"></script>
+        <script src="../../lib/jquery.mobile-1.3.0.min.js"></script>-->
+        <script src="../../models/user.js"></script>
+        <script src="../../models/team.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+       <!--<link rel="stylesheet" href="css/jquery.mobile-1.3.0.min.css" />-->
+        <!--<link rel="stylesheet" type="text/css" href="/css/index.css"/>-->
+        <script type="text/javascript">
+            var team1 = new team("Dargon Tarps", 1, "League of Legends");
+            var user1 = new user("My Boy", "Password1234");
+            user1.teams.push(team1);
+            $("#teamTitle").text("OK");
+        </script>
 
-        <!--<script type="text/javascript" src="../../lib/jquery-1.9.1.js"></script>
-        <script type="text/javascript" src="../../models/user.js"></script>
-        <script type="text/javascript" src="../../lib/jquery.mobile-1.4.5.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <link rel="stylesheet"  href="./css/jquery.mobile.theme-1.4.5.css"/>
-        <link rel="stylesheet"  href="./css/jquery.mobile-1.4.5.css" media="all, handheld"/>
-        <link rel="stylesheet"  href="./css/jquery.mobile.icons-1.4.5.css"/>-->
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
-        <link rel="stylesheet" type="text/css" href="./css/index.css" />
-        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-        <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
-
-        <title>Hello World</title>
     </head>
 
     <body>
-    <div data-role="header" data-theme="a" >
-        <a class="icon" data-icon="bars" >Teams</a>
-        <!-- 10 mught be a good char limit -->
-        <h2 id="teamTitle">Dargon Tarps</h2>
+    <div data-role="header">
+        <a data-icon="bars">Teams</a>>
+        <h1 id="teamTitle">Test</h1>
         <a class="icon" data-icon="gear" >Options</a>
     </div>
 
