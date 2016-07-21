@@ -1,6 +1,6 @@
 import {RequestMethod} from "./RequestMethod";
 
-export interface Dispatcher
+export interface IDispatcher
 {
     dispatch(requestMethod : RequestMethod) : Object;
 }

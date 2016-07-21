@@ -1,7 +1,9 @@
 import {toRequestMethod, RequestMethod} from "../Services/common/RequestMethod";
-import {Dispatcher} from "../Services/common/Dispatcher";
+import {IDispatcher} from "../Services/common/IDispatcher";
 import {ExampleDispatcher} from "../Services/common/ExampleDispatcher";
 import {IncomingMessage, ServerResponse} from "http";
+import {DispatchGenerator} from "../Services/common/DispatchGenerator";
+import {RequestUrl} from "../Services/common/RequestUrl";
 
 export class ServiceDispatcher
 {
@@ -11,8 +13,8 @@ export class ServiceDispatcher
         response.setHeader('Content-Type', 'application/json');
 
         var headers = request.headers;
-        var method = request.method;
-        var url = request.url;
+        var method : RequestMethod = toRequestMethod(request.method);
+        var url : RequestUrl = new RequestUrl(request.url);
         var body = [];
 
         request.on('error', function (err) {
@@ -25,9 +27,8 @@ export class ServiceDispatcher
                 console.error(err);
             });
 
-            var rm : RequestMethod = toRequestMethod(method);
-            var dispatcher : Dispatcher = new ExampleDispatcher();
-            var responseBody : Object = dispatcher.dispatch(rm);
+            var dispatcher : IDispatcher = DispatchGenerator.generate(headers, method, url);
+            var responseBody : Object = dispatcher.dispatch(method);
 
             response.write(JSON.stringify(responseBody));
             response.end();
