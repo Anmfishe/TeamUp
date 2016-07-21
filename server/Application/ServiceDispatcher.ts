@@ -1,10 +1,11 @@
 import {toRequestMethod, RequestMethod} from "../Services/common/RequestMethod";
 import {Dispatcher} from "../Services/common/Dispatcher";
 import {ExampleDispatcher} from "../Services/common/ExampleDispatcher";
+import {IncomingMessage, ServerResponse} from "http";
 
 export class ServiceDispatcher
 {
-    static dispatch(request /*: IncomingMessage*/, response /*: ServerResponse*/)
+    static dispatch(request : IncomingMessage, response : ServerResponse)
     {
         response.statusCode = 200;
         response.setHeader('Content-Type', 'application/json');

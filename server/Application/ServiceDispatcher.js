@@ -4,7 +4,7 @@ var ExampleDispatcher_1 = require("../Services/common/ExampleDispatcher");
 var ServiceDispatcher = (function () {
     function ServiceDispatcher() {
     }
-    ServiceDispatcher.dispatch = function (request /*: IncomingMessage*/, response /*: ServerResponse*/) {
+    ServiceDispatcher.dispatch = function (request, response) {
         response.statusCode = 200;
         response.setHeader('Content-Type', 'application/json');
         var headers = request.headers;
